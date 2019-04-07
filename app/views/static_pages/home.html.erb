@@ -5,7 +5,12 @@
     コーヒーが大好きな人へ送るカフェレビューサイト。
   </h2>
 
-  <%= link_to "登録はこちらから！", '#', class: "btn btn-lg btn-primary" %>
-</div>
+  <% if user_signed_in? %>
+  <%= link_to 'プロフィール変更', edit_user_registration_path %>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'ユーザー登録', new_user_registration_path %>
+  <%= link_to 'ログイン', new_user_session_path %>
+<% end %>
 
 <%= link_to image_tag("coffee.png", alt: "Coffee time") %>
