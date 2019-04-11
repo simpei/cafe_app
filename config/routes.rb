@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' } # ここを変更
   root to: 'static_pages#home'  
   get '/about', to: 'static_pages#about'
   get '/serch',  to:'static_pages#serch'
