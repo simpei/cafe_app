@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 本サービスについて
+コーヒーが好きな人がおいしいと思ったカフェのレビューを投稿するサービスです。
 
-Things you may want to cover:
+既存のサービスでは、コーヒーの味に関係なく雰囲気や写真映えするかどうかが重視されがちでしたが、
+サードウェーブコーヒーの出現によってコーヒー本来の味で勝負するお店がふえてきました。
 
-* Ruby version
+私自身、バリスタの経験もある中でコーヒーが好きな人がおすすめするカフェを知りたいと思うようになりました。
 
-* System dependencies
+そこで、今回コーヒーの味に重点を置いたカフェレビューサービスを立ち上げようと思い至ったのであります。
 
-* Configuration
+このサービスでは短期間での収益化などは考えておりません。
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+信頼できる日本のコーヒー情報はここに集まる！そんな立ち位置を確立できたらうれしく思います。
