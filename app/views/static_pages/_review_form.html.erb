@@ -1,0 +1,7 @@
+<%= form_for(@review) do |f| %>
+    <%= render 'static_pages/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "口コミを書いてね～～！" %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+  <% end %>

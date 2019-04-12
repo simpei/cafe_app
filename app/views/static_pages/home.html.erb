@@ -1,16 +1,34 @@
 <div class="center jumbotron">
-  <h1>Cafe Review!</h1>
+
+<h1>Cafe Review!</h1>
 
   <h2>
     コーヒーが大好きな人へ送るカフェレビューサイト。
   </h2>
 
   <% if user_signed_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+  <h1><%= current_user.username %></h1>
+  <span><%= link_to "プロフィール", current_user %></span>
+  <span><%= pluralize(current_user.reviews.count, "口コミ") %></span>
+      </section>
+
+      <section class="review_form">
+      <%= form_for(@review) do |f| %>
+        <div class="field">
+          <%= f.text_area :content, placeholder: "口コミを書いてね～～！" %>
+        </div>
+        <%= f.submit "Post", class: "btn btn-primary" %>
+      <% end %>
+
+      </section>
+    </aside>
+  </div>
   <%= link_to 'プロフィール変更', edit_user_registration_path %>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 <% else %>
   <%= link_to 'ユーザー登録', new_user_registration_path %>
   <%= link_to 'ログイン', new_user_session_path %>
 <% end %>
-
-<%= link_to image_tag("coffee.png", alt: "Coffee time") %>
