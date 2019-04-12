@@ -4,8 +4,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable  #モジュールを追加
- 
-# findメソッドを追加
+
+
+
+  # findメソッドを追加
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
  
@@ -22,6 +24,10 @@ class User < ApplicationRecord
     user
   end
  
+  def feed
+    Review.where("user_id = ?", id)
+  end
+
   private
  
 # ダミーのアドレスを用意

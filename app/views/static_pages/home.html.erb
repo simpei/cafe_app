@@ -20,7 +20,7 @@
         <div class="field">
           <%= f.text_area :content, placeholder: "口コミを書いてね～～！" %>
         </div>
-        <%= f.submit "Post", class: "btn btn-primary" %>
+        <%= f.submit "投稿する", class: "btn btn-primary" %>
       <% end %>
 
       </section>
@@ -28,6 +28,14 @@
   </div>
   <%= link_to 'プロフィール変更', edit_user_registration_path %>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <div class="col-md-8">
+      <h3>口コミ一覧</h3>
+      <% if @feed_items.any? %>
+  <ol class="reviews">
+    <%= render @feed_items %>
+  </ol>
+<% end %>
+  </div>
 <% else %>
   <%= link_to 'ユーザー登録', new_user_registration_path %>
   <%= link_to 'ログイン', new_user_session_path %>
