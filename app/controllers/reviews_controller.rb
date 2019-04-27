@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
             redirect_to root_url
         else
             @feed_items = []
-            render 'sratic_pages/home'
+            render 'static_pages/home'
         end
     end
 
@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
     private
 
         def review_params
-            params.require(:review).permit(:content)
+            params.require(:review).permit(:content, :picture)
         end
 
         def correct_user
